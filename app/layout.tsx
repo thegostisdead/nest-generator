@@ -1,51 +1,50 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Provider } from "@/components/provider";
+import './globals.css';
+import type { Metadata } from 'next';
+import { Provider } from '@/components/provider';
 
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
 
 const spaceMono = localFont({
   src: [
     {
-      path: "../public/fonts/space-mono/SpaceMono-Regular.ttf",
-      weight: "400",
-      style: "normal",
+      path: '../public/fonts/space-mono/SpaceMono-Regular.ttf',
+      weight: '400',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/space-mono/SpaceMono-Italic.ttf",
-      weight: "400",
-      style: "italic",
+      path: '../public/fonts/space-mono/SpaceMono-Italic.ttf',
+      weight: '400',
+      style: 'italic',
     },
     {
-      path: "../public/fonts/space-mono/SpaceMono-Bold.ttf",
-      weight: "700",
-      style: "normal",
+      path: '../public/fonts/space-mono/SpaceMono-Bold.ttf',
+      weight: '700',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/space-mono/SpaceMono-BoldItalic.ttf",
-      weight: "700",
-      style: "italic",
+      path: '../public/fonts/space-mono/SpaceMono-BoldItalic.ttf',
+      weight: '700',
+      style: 'italic',
     },
   ],
 });
 
 export const metadata: Metadata = {
-  title: "Kaminari",
-  generator: "Next.js",
-  applicationName: "Kaminari",
-  referrer: "origin-when-cross-origin",
+  title: 'Nest Gen',
+  generator: 'Next.js',
+  applicationName: 'Nest Gen',
+  referrer: 'origin-when-cross-origin',
   keywords: [
-    "Next.js",
-    "React",
-    "JavaScript",
-    "Boilerplate",
-    "Template",
-    "shadcn-ui",
+    'Next.js',
+    'React',
+    'JavaScript',
+    'Nest',
+    'NestJs',
   ],
-  authors: [{ name: "Virgil", url: "https://obedd.vercel.app" }],
-  colorScheme: "dark",
-  creator: "Virgil",
-  publisher: "Virgil",
+  authors: [{ name: 'thegostisdead', url: 'https://github.com/thegostisdead' }],
+  colorScheme: 'dark',
+  creator: 'thegostisdead',
+  publisher: 'thegostisdead',
   alternates: {},
   formatDetection: {
     email: false,
@@ -53,25 +52,24 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Kaminari",
-    description: "Next.js, TailwindCSS and shadcn-ui Starter Template",
-    url: "https://kaminari.vercel.app",
-    siteName: "Kaminari",
+    title: 'Nest Gen',
+    description: 'Generate nest js commands easily',
+    url: 'https://nest-gen.vercel.app',
+    siteName: 'Nest Gen',
     images: [
       {
-        url: "https://kaminari.vercel.app/og.png",
-        width: 800,
-        height: 600,
+        url: 'https://nest-gen.vercel.app/og.png',
+        width: 2558,
+        height: 1279,
       },
       {
-        url: "https://kaminari.vercel.app/og-dark.png",
-        width: 1800,
-        height: 1600,
-        alt: "Next.js, TailwindCSS and shadcn-ui Starter Template",
+        url: 'https://nest-gen.vercel.app/og-dark.png',
+        width: 2559,
+        height: 1278,
       },
     ],
-    locale: "en-US",
-    type: "website",
+    locale: 'en-US',
+    type: 'website',
   },
   robots: {
     index: true,
@@ -79,21 +77,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${spaceMono.className}`}>
-        <Provider attribute="class" defaultTheme="system" enableSystem>
-          <main
-            className={`text-zinc-700 bg-white dark:text-zinc-400 dark:bg-black`}
-          >
-            {children}
-          </main>
-        </Provider>
-      </body>
+    <html lang='en'>
+    <body className={`${spaceMono.className}`}>
+    <Provider attribute='class' defaultTheme='system' enableSystem>
+      <main
+        className={`text-zinc-700 bg-white dark:text-zinc-400 dark:bg-black`}
+      >
+        {children}
+      </main>
+    </Provider>
+    </body>
     </html>
   );
 }
