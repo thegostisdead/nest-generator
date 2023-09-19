@@ -85,11 +85,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-    <body className={`${spaceMono.className}`}>
+    <body className={`${spaceMono.className} text-zinc-700 bg-white dark:text-zinc-400 dark:bg-black`}>
     <Provider attribute='class' defaultTheme='system' enableSystem>
-      <main
-        className={`text-zinc-700 bg-white dark:text-zinc-400 dark:bg-black`}
-      >
+      <main>
         {children}
       </main>
       <Toaster />

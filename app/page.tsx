@@ -72,16 +72,16 @@ export default function Home() {
           >
             Nest Gen.{' '}
             <span
-              className={`text-sm font-bold group ml-2 inline-block rounded-3xl bg-[#fafafa] px-3 text-black`}
+              className={`text-sm font-bold group ml-2 inline-block rounded-3xl bg-[#22C55E] text-lime-50 dark:bg-[#fafafa] px-3 dark:text-black`}
             >
-            <span className=''>v1</span>
-          </span>
+              <span className=''>v1</span>
+            </span>
           </Link>
           <ThemeToggle />
         </div>
 
-        <div className='flex w-full items-center justify-between'>
-          <div className='flex w-1/2 m-4 h-full'>
+        <div className='flex flex-col lg:flex-row lg:w-full items-center justify-between'>
+          <div className='flex w-full lg:w-1/2 m-4 h-full'>
             <Card className='w-full h-full'>
               <CardHeader>
                 <CardTitle>Select your cli options</CardTitle>
@@ -93,30 +93,34 @@ export default function Home() {
                     <div className='flex flex-col space-y-1.5'>
                       <Label htmlFor='name'>The name of the generated component.</Label>
                       <Input id='name' type='text' placeholder='Name of your project' value={name}
-                             onChange={e => setName(e.target.value)} />
+                        onChange={e => setName(e.target.value)} />
                     </div>
                     <div className='flex flex-col space-y-1.5'>
-                      <ScrollArea className='w-full border p-4 h-[700px]'>
+                      <ScrollArea className='w-full border p-4 h-[700px] lg:h-[412px]'>
 
                         {checkedList.map((schematic) => (
-                          <div className='items-top flex space-x-4 space-y-4' key={schematic.name}>
-                            <Checkbox
-                              id={schematic.name + '_' + schematic.alias}
-                              checked={schematic.checked}
-                              value={schematic.name}
-                              onCheckedChange={(e) => {
-                                schematic.checked = e;
-                                setCheckedList([...checkedList]);
-                              }}
-                            />
-                            <div className='grid gap-1.5 leading-none'>
-                            <span
-                              className='text-sm font-bold group ml-2 inline-block rounded-3xl bg-[#fafafa] px-3 text-black'>
-                              <span className=''>{schematic.name}</span>
-                            </span>
-                              <p className='text-sm text-muted-foreground'>
-                                {schematic.description}
-                              </p>
+                          <div className='flex items-top space-x-4 mb-4' key={schematic.name}>
+                            <div className=''>
+                              <Checkbox
+                                id={schematic.name + '_' + schematic.alias}
+                                checked={schematic.checked}
+                                value={schematic.name}
+                                onCheckedChange={(e) => {
+                                  schematic.checked = e;
+                                  setCheckedList([...checkedList]);
+                                }}
+                              />
+                            </div>
+                            <div className=''>
+                              <div className='grid gap-1.5 leading-none'>
+                                <span
+                                  className='w-fit text-sm font-bold group ml-2 px-3 inline-block rounded-3xl bg-[#22C55E] text-lime-50 dark:bg-[#fafafa] dark:text-black'>
+                                  <span className=''>{schematic.name}</span>
+                                </span>
+                                <p className='text-sm text-muted-foreground'>
+                                  {schematic.description}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         ))}
@@ -132,14 +136,14 @@ export default function Home() {
               </CardFooter>
             </Card>
           </div>
-          <div className='flex w-1/2 m-4 h-full'>
+          <div className='flex w-full lg:w-1/2 m-4 h-full'>
             <Card className='w-full '>
               <CardHeader>
                 <CardTitle>Generated Commands</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className='grid w-full gap-2'>
-                  <Textarea className='h-[700px]' value={command} />
+                  <Textarea className='h-[700px] lg:h-[412px]' value={command} />
                   <Button onClick={() => {
                     navigator.clipboard.writeText(command);
                     toast({
